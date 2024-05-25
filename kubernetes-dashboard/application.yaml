@@ -17,10 +17,10 @@ spec:
     chart: kubernetes-dashboard
     targetRevision: 7.4.0  # For Helm, this refers to the chart version.
 
-  helm:
-    values: |
-      env:
-        admin_listen: "0.0.0.0:8444 http2 ssl"
+    helm:
+      values: |
+        env:
+          admin_listen: "0.0.0.0:8444 http2 ssl"
 
   # Destination cluster and namespace to deploy the application
   destination:
