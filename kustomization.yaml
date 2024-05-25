@@ -1,2 +1,2 @@
 resources:
-  - plgg
+  - prometheus-loki-grafana-go
