@@ -19,8 +19,9 @@ spec:
 
     helm:
       values: |
-        env:
-          admin_listen: "0.0.0.0:8444 http2 ssl"
+        kong:
+          env:
+            admin_listen: "0.0.0.0:8444 http2 ssl"
 
   # Destination cluster and namespace to deploy the application
   destination:
