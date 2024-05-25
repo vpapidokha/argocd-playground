@@ -14,7 +14,7 @@ spec:
   # Source of the application manifests
   source:
     repoURL: https://kubernetes.github.io/dashboard/ # Can point to either a Helm chart repo or a git repo.
-    chart: kubernetes-dashboard/kubernetes-dashboard
+    chart: kubernetes-dashboard
     targetRevision: 7.4.0  # For Helm, this refers to the chart version.
 
   # Destination cluster and namespace to deploy the application
