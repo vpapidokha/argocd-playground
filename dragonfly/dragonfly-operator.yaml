@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dragonfly-operator
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+spec:
+  destination:
+    namespace: dragonfly
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: dragonfly-operator
+    helm:
+      values: |
+        crds:
+          install: true
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi
+          requests:
+            cpu: 10m
+            memory: 64Mi
+    repoURL: https://jacobcolvin.com/helm-charts
+    targetRevision: 0.1.1
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

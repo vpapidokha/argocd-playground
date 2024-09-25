@@ -1,2 +1,2 @@
 resources:
-  - prometheus-loki-grafana-go
+  - dragonfly
