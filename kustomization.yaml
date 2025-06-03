@@ -1,2 +1,4 @@
 resources:
   - dragonfly
+  - kubernetes-dashboard
+  - prometheus-loki-grafana-go
